@@ -1,22 +1,22 @@
 import './App.css';
 
+import CssBaseline from '@mui/material/CssBaseline';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+
+const defaultTheme = createTheme();
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <Container className='App' component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
+        <Typography variant="h2" component="h1" gutterBottom>
+          Investor App
+        </Typography>
+      </Container>
+    </ThemeProvider>
   );
 }
 
