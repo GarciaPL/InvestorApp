@@ -28,8 +28,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Screenshots
 
-![investors](https://github.com/GarciaPL/InvestorApp/blob/main/investors.png?raw=true)
+![investors](https://github.com/GarciaPL/InvestorApp/blob/main/screenshots/investors.png?raw=true)
 
-![asset classes](https://github.com/GarciaPL/InvestorApp/blob/main/asset_classes.png?raw=true)
+![asset classes](https://github.com/GarciaPL/InvestorApp/blob/main/screenshots/asset_classes.png?raw=true)
 
-![investor commitments](https://github.com/GarciaPL/InvestorApp/blob/main/investor_commitments.png?raw=true)
+![investor commitments](https://github.com/GarciaPL/InvestorApp/blob/main/screenshots/investor_commitments.png?raw=true)
