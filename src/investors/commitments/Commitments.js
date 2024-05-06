@@ -21,21 +21,23 @@ function Commitments() {
   const commitmentApi = `${baseUrl}${commitmentsEndpoint}`
 
   useEffect(() => {
-    setLoading(true)
-    axios
-      .get(commitmentApi + '/pe' + '/' + '2670')
-      .then((response) => {
-        setCommitments(response.data)
-      })
-      .catch((error) => {
-        console.error(error)
-        setError(error)
-        setCommitments([])
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-  }, [])
+    if (selectedOption) {
+      setLoading(true)
+      axios
+        .get(commitmentApi + '/pe' + '/' + '2670')
+        .then((response) => {
+          setCommitments(response.data)
+        })
+        .catch((error) => {
+          console.error(error)
+          setError(error)
+          setCommitments([])
+        })
+        .finally(() => {
+          setLoading(false)
+        })
+    }
+  }, [selectedOption])
 
   const handleSelectChange = (option) => {
     setSelectedOption(option)
