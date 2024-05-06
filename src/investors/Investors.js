@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import InvestorDetails from './InvestorDetails'
+import Loading from '../common/Loading'
 
 function Investors() {
   const [loading, setLoading] = useState(false)
@@ -26,7 +27,7 @@ function Investors() {
 
   return (
     <div>
-      {loading ? <div>Loading</div> : <InvestorDetails investors={investors} />}
+      {loading ? <Loading /> : <InvestorDetails investors={investors} />}
     </div>
   )
 }
