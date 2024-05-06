@@ -23,8 +23,12 @@ function Commitments() {
   useEffect(() => {
     if (selectedOption) {
       setLoading(true)
+      const assetClass = selectedOption.value
+      const investorId = id
+      const COMMITMENTS_API = `${commitmentApi}/${assetClass}/${investorId}`
+
       axios
-        .get(commitmentApi + '/pe' + '/' + '2670')
+        .get(COMMITMENTS_API)
         .then((response) => {
           setCommitments(response.data)
         })
