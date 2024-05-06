@@ -21,8 +21,8 @@ function App() {
       >
         <Typography variant="h2" component="h1" gutterBottom>
           Investor App
-          <Investors />
         </Typography>
+        <Investors />
       </Container>
     </ThemeProvider>
   );
