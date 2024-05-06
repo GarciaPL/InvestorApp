@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 
 import AppContext from '../context/AppContext'
@@ -25,6 +25,7 @@ function Investors() {
       .catch((error) => {
         console.error(error)
         setError(error)
+        setInvestors([])
       })
       .finally(() => {
         setLoading(false)

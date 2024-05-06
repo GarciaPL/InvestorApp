@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-
 import axios from 'axios'
+
+import AppContext from '../../context/AppContext'
 
 import CommitmentDetails from './CommitmentDetails'
 import Error from '../../common/Error'
+import Loading from '../../common/Loading'
 
 function Commitments() {
     const { id } = useParams()
@@ -13,8 +15,23 @@ function Commitments() {
     const [error, setError] = useState(null)
     const [commitments, setCommitments] = useState([])
 
-    useEffect(() => {
+    const { baseUrl, commitmentsEndpoint } = useContext(AppContext)
+    const commitmentApi = `${baseUrl}${commitmentsEndpoint}`
 
+    useEffect(() => {
+        setLoading(true)
+        axios.get(commitmentApi + "/pe" + "/" + "2670")
+            .then((response) => {
+                setCommitments(response.data)
+            })
+            .catch((error) => {
+                console.error(error)
+                setError(error)
+                setCommitments([])
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     }, []);
 
     if (error) {
@@ -23,7 +40,7 @@ function Commitments() {
 
     return (
         <div>
-            Commitments
+            {loading ? <Loading /> : <CommitmentDetails commitments={commitments} />}
         </div>
     );
 }
