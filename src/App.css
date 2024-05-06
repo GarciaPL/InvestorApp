@@ -27,3 +27,8 @@ th, td {
   padding: 10px;
   text-align: center;
 }
+
+tbody tr:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
