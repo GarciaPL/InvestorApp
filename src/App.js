@@ -8,6 +8,7 @@ import Home from './Home'
 import Investors from './investors/Investors'
 import Commitments from './investors/commitments/Commitments'
 import NotFound from './common/NotFound'
+import Navigation from './theme/Navigation'
 
 import CssBaseline from '@mui/material/CssBaseline'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
@@ -36,6 +37,7 @@ function App() {
             <Route path='/investor/:id' element={<Commitments />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
+          <Navigation />
         </AppContext.Provider>
       </Container>
     </ThemeProvider>
