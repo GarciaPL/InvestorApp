@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 import CommitmentDetails from './CommitmentDetails'
+import Error from '../../common/Error'
 
 function Commitments() {
     const { id } = useParams()
