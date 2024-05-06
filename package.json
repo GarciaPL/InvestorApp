@@ -16,10 +16,10 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "jest": "^27.5.1",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.6",
+    "@testing-library/user-event": "^14.5.2",
+    "jest": "^29.7.0",
     "prettier": "3.2.5"
   },
   "scripts": {
@@ -28,6 +28,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write ."
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    }
   },
   "eslintConfig": {
     "extends": [
