@@ -3,6 +3,7 @@ import './App.css'
 
 import Home from './Home'
 import Investors from './investors/Investors'
+import Commitments from './investors/commitments/Commitments'
 import NotFound from './common/NotFound'
 
 import CssBaseline from '@mui/material/CssBaseline'
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/investors' element={<Investors />} />
+          <Route path='/investor/:id' element={<Commitments />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Container>
