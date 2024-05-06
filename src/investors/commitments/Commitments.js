@@ -52,7 +52,7 @@ function Commitments() {
   }
 
   return (
-    <div>
+    <div data-testid='asset-class-test-id'>
       <Select
         id='assetClassSelect'
         name='assetClassSelect'
