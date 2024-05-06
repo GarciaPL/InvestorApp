@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+import AppContext from '../context/AppContext'
+
 import InvestorDetails from './InvestorDetails'
 import Loading from '../common/Loading'
 import Error from '../common/Error'
@@ -10,7 +12,8 @@ function Investors() {
   const [error, setError] = useState(null)
   const [investors, setInvestors] = useState([])
 
-  const investorsApi = 'http://127.0.0.1:8000/api/investors'
+  const { baseUrl, investorsEndpoint } = useContext(AppContext)
+  const investorsApi = `${baseUrl}${investorsEndpoint}`
 
   useEffect(() => {
     setLoading(true)
