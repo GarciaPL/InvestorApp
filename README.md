@@ -25,3 +25,11 @@ Launches the test runner in the interactive watch mode.
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+## Screenshots
+
+![investors](https://github.com/GarciaPL/InvestorApp/blob/main/investors.png?raw=true)
+
+![asset classes](https://github.com/GarciaPL/InvestorApp/blob/main/asset_classes.png?raw=true)
+
+![investor commitments](https://github.com/GarciaPL/InvestorApp/blob/main/investor_commitments.png?raw=true)
