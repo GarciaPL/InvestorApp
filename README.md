@@ -1,8 +1,16 @@
 # InvestorApp
 
-## Available Scripts
+## Docker
 
-In the project directory, you can run:
+Build image
+
+`docker build -t investor-app .`
+
+Run container
+
+`docker run -p 80:80 investor-app`
+
+## Available Scripts
 
 ### `npm start`
 
