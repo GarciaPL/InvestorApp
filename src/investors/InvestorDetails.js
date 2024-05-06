@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function InvestorDetails({ investors }) {
   return (
@@ -24,7 +24,7 @@ function InvestorDetails({ investors }) {
         ))}
       </tbody>
     </table>
-  );
+  )
 }
 
-export default InvestorDetails;
+export default InvestorDetails
