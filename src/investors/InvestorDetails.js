@@ -21,7 +21,8 @@ function InvestorDetails({ investors }) {
       </thead>
       <tbody>
         {investors.map((investor) => (
-          <tr key={investor.firm_id}
+          <tr
+            key={investor.firm_id}
             onClick={() => handleInvestorClick(investor.firm_id)}
           >
             <td>{investor.firm_id}</td>
