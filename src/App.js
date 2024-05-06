@@ -1,6 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
+import AppContext from './context/AppContext'
+import { APP_CONTEXT_VALUES } from './context/APP_CONTEXT_VALUES'
+
 import Home from './Home'
 import Investors from './investors/Investors'
 import Commitments from './investors/commitments/Commitments'
@@ -26,12 +29,14 @@ function App() {
         <Typography variant='h2' component='h1' gutterBottom>
           Investor App
         </Typography>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/investors' element={<Investors />} />
-          <Route path='/investor/:id' element={<Commitments />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
+        <AppContext.Provider value={APP_CONTEXT_VALUES}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/investors' element={<Investors />} />
+            <Route path='/investor/:id' element={<Commitments />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </AppContext.Provider>
       </Container>
     </ThemeProvider>
   )
