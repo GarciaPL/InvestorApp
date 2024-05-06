@@ -1,5 +1,7 @@
 import "./App.css";
 
+import Investors from './investors/Investors'
+
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
@@ -19,6 +21,7 @@ function App() {
       >
         <Typography variant="h2" component="h1" gutterBottom>
           Investor App
+          <Investors />
         </Typography>
       </Container>
     </ThemeProvider>
