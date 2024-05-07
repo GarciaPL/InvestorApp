@@ -38,7 +38,17 @@ function Investors() {
 
   return (
     <div>
-      {loading ? <Loading /> : <InvestorDetails investors={investors} />}
+      {loading ? (
+        <Loading />
+      ) : investors ? (
+        investors.length > 0 ? (
+          <InvestorDetails investors={investors} />
+        ) : (
+          <div>No investors found!</div>
+        )
+      ) : (
+        <div>No investors found!</div>
+      )}
     </div>
   )
 }

@@ -64,8 +64,18 @@ function Commitments() {
       />
       {loading ? (
         <Loading />
+      ) : selectedOption ? (
+        commitments ? (
+          commitments.length > 0 ? (
+            <CommitmentDetails commitments={commitments} />
+          ) : (
+            <div>No commitments found!</div>
+          )
+        ) : (
+          <div>No commitments found for {selectedOption}!</div>
+        )
       ) : (
-        selectedOption && <CommitmentDetails commitments={commitments} />
+        <div></div>
       )}
     </div>
   )
