@@ -9,13 +9,13 @@ import { INVESTORS_DATA_API } from './API_DATA'
 
 jest.mock('axios')
 
-test('full app rendering/navigating default route', async () => {
+test('renders default route', async () => {
   render(<App />, { wrapper: BrowserRouter })
 
   expect(screen.getByText(/Investor app/i)).toBeInTheDocument()
 })
 
-test('full app rendering/navigating after clicking on Home', async () => {
+test('renders after clicking on Home', async () => {
   render(<App />, { wrapper: BrowserRouter })
   const user = userEvent.setup()
 

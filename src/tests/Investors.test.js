@@ -11,8 +11,6 @@ jest.mock('axios')
 test('renders investor commitments', async () => {
   const investorsUrl = '/investors'
 
-  axios.get.mockResolvedValue({ data: INVESTORS_DATA_API })
-
   axios.get
     .mockResolvedValueOnce({ data: INVESTORS_DATA_API })
     .mockResolvedValueOnce({ data: COMMITMENT_DATA_API })
