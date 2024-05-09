@@ -10,6 +10,10 @@ Run container
 
 `docker run -p 80:80 investor-app`
 
+## Cypress
+
+`npx cypress run --component`
+
 ## Available Scripts
 
 ### `npm start`

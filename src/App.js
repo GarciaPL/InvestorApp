@@ -27,7 +27,7 @@ function App() {
         sx={{ mt: 8, mb: 2 }}
         maxWidth='sm'
       >
-        <Typography variant='h2' component='h1' gutterBottom>
+        <Typography variant='h2' component='h1' gutterBottom id='title'>
           Investor App
         </Typography>
         <AppContext.Provider value={APP_CONTEXT_VALUES}>

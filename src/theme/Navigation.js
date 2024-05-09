@@ -20,12 +20,14 @@ export default function Navigation() {
       >
         <BottomNavigationAction
           component={Link}
+          id='HomeButton'
           label='Home'
           to='/'
           icon={<RestoreIcon />}
         />
         <BottomNavigationAction
           component={Link}
+          id='InvestorsButton'
           label='Investors'
           to='/investors'
           icon={<AssignmentIndIcon />}

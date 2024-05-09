@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 function InvestorDetails({ investors }) {
   const navigate = useNavigate()
 
-  const handleInvestorClick = (invertorId) => {
-    navigate(`/investor/${invertorId}`)
+  const handleInvestorClick = (investorId) => {
+    navigate(`/investor/${investorId}`)
   }
 
   return (
