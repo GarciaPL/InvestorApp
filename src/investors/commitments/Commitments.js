@@ -6,6 +6,9 @@ import axios from 'axios'
 import AppContext from '../../context/AppContext'
 
 import CommitmentDetails from './CommitmentDetails'
+import CommitmentPieChart from './charts/CommitmentPieChart'
+import CommitmentByCurrencyBarChart from './charts/CommitmentByCurrencyBarChart'
+
 import Error from '../../common/Error'
 import Loading from '../../common/Loading'
 
@@ -67,7 +70,13 @@ function Commitments() {
       ) : selectedOption ? (
         commitments ? (
           commitments.length > 0 ? (
-            <CommitmentDetails commitments={commitments} />
+            <div>
+              <CommitmentDetails commitments={commitments} />
+              <br />
+              <CommitmentPieChart commitments={commitments} />
+              <br />
+              <CommitmentByCurrencyBarChart commitments={commitments} />
+            </div>
           ) : (
             <div>No commitments found!</div>
           )

@@ -51,10 +51,11 @@ test('renders investor commitments', async () => {
 
   await waitFor(() => {
     COMMITMENT_DATA_API.forEach((investor) => {
+      expect(screen.getByText(investor.id)).toBeInTheDocument()
       expect(screen.getByText(investor.firm_id)).toBeInTheDocument()
       expect(screen.getByText(investor.asset_class)).toBeInTheDocument()
       expect(screen.getByText(investor.amount)).toBeInTheDocument()
-      expect(screen.getByText(investor.currency)).toBeInTheDocument()
+      expect(screen.getAllByText(investor.currency)[0]).toBeInTheDocument()
     })
   })
 })

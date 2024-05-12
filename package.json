@@ -6,8 +6,10 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.16",
-    "@mui/material": "^5.15.16",
+    "@mui/material": "^5.15.17",
+    "@mui/x-charts": "^7.4.0",
     "axios": "^1.6.8",
+    "ramda": "^0.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.0",
@@ -34,7 +36,10 @@
   "jest": {
     "moduleNameMapper": {
       "^axios$": "axios/dist/node/axios.cjs"
-    }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@mui/x-charts|@mui/material|@babel/runtime|d3-(color|format|interpolate|scale|shape|time|time-format|path|array)|internmap)"
+    ]
   },
   "eslintConfig": {
     "extends": [
