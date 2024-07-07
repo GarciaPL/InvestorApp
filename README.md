@@ -8,7 +8,7 @@ Build image
 
 Run container
 
-`docker run -p 80:80 investor-app`
+`docker run -p 80:80 --name investor-app investor-app`
 
 ## Cypress
 
@@ -19,7 +19,7 @@ Run container
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:80](http://localhost:80) to view it in your browser.
 
 ### `npm test`
 
