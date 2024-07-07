@@ -1,5 +1,4 @@
-import React from 'react'
-import InvestorsInterface from '../../investors/Investors'
+import Investors from '../../investors/Investors'
 
 describe('<Investors />', () => {
   it('renders investors - assert table headers and values', () => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import Commitments from '../../investors/commitments/Commitments'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 

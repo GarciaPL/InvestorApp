@@ -1,4 +1,3 @@
-import React from 'react'
 import InvestorDetails from '../../investors/InvestorDetails'
 import { INVESTORS_DATA_API } from '../API_DATA'
 

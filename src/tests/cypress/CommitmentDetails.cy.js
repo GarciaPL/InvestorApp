@@ -1,4 +1,3 @@
-import React from 'react'
 import CommitmentDetails from '../../investors/commitments/CommitmentDetails'
 import { COMMITMENT_DATA_API } from '../API_DATA'
 
