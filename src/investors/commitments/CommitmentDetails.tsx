@@ -1,4 +1,6 @@
-function CommitmentDetails({ commitments }) {
+import { CommitmentDetailsProps, Commitment } from '../types/Types'
+
+const CommitmentDetails = ({ commitments }: CommitmentDetailsProps) => {
   return (
     <table>
       <thead>
@@ -11,7 +13,7 @@ function CommitmentDetails({ commitments }) {
         </tr>
       </thead>
       <tbody>
-        {commitments.map((commitment) => (
+        {commitments.map((commitment: Commitment) => (
           <tr key={commitment.id}>
             <td>{commitment.id}</td>
             <td>{commitment.firm_id}</td>

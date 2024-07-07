@@ -1,15 +1,15 @@
-import * as React from 'react'
 import { PieChart } from '@mui/x-charts/PieChart'
 import * as R from 'ramda'
+import { parseMillions } from './utils'
 
-function CommitmentPieChart({ commitments }) {
-  const parseMillions = R.pipe(R.replace('M', ''), R.trim, parseInt)
+import { CommitmentDetailsProps, PieChartLabel } from '../../types/Types'
 
-  const transformData = R.map(
+const CommitmentPieChart = ({ commitments }: CommitmentDetailsProps) => {
+  const transformCommitments = R.map(
     R.applySpec({
       id: R.prop('id'),
       value: R.pipe(R.prop('amount'), parseMillions),
-      label: ({ amount, currency }) => `${amount} (${currency})`,
+      label: ({ amount, currency }: PieChartLabel) => `${amount} (${currency})`,
     })
   )
 
@@ -18,7 +18,8 @@ function CommitmentPieChart({ commitments }) {
       <PieChart
         series={[
           {
-            data: [...transformData(commitments)],
+            // @ts-ignore
+            data: [...transformCommitments(commitments)],
             innerRadius: 0,
             outerRadius: 100,
             paddingAngle: 5,

@@ -1,4 +1,4 @@
-import { ErrorInterface } from "./types/Types"
+import { ErrorInterface } from './types/Types'
 
 const Error = ({ errorMessage }: ErrorInterface) => {
   return (

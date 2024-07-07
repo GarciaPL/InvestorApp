@@ -1,10 +1,11 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function InvestorDetails({ investors }) {
+import { Investor, InvestorDetailsProps } from './types/Types'
+
+const InvestorDetails = ({ investors }: InvestorDetailsProps) => {
   const navigate = useNavigate()
 
-  const handleInvestorClick = (investorId) => {
+  const handleInvestorClick = (investorId: number) => {
     navigate(`/investor/${investorId}`)
   }
 
@@ -20,7 +21,7 @@ function InvestorDetails({ investors }) {
         </tr>
       </thead>
       <tbody>
-        {investors.map((investor) => (
+        {investors.map((investor: Investor) => (
           <tr
             key={investor.firm_id}
             onClick={() => handleInvestorClick(investor.firm_id)}

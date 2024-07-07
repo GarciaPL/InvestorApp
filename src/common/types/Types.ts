@@ -1,3 +1,3 @@
 export interface ErrorInterface {
-    errorMessage: string
+  errorMessage: string
 }

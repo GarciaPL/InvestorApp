@@ -1,24 +1,34 @@
-import * as React from 'react'
 import { BarChart } from '@mui/x-charts/BarChart'
 import * as R from 'ramda'
+import { parseMillions } from './utils'
 
-function CommitmentByCurrencyBarChart({ commitments }) {
-  const parseMillions = R.pipe(R.replace('M', ''), R.trim, parseInt)
+import { CommitmentDetailsProps } from '../../types/Types'
 
+const CommitmentByCurrencyBarChart = ({
+  commitments,
+}: CommitmentDetailsProps) => {
   const sumAmountsByCurrency = R.pipe(
+    // @ts-ignore
     R.groupBy(R.prop('currency')),
     R.map(
       R.pipe(
+        // @ts-ignore
         R.map(R.evolve({ amount: parseMillions })),
-        R.reduce((acc, commitment) => acc + commitment.amount, 0)
+        R.reduce(
+          (acc: number, commitment: { amount: number }) =>
+            acc + commitment.amount,
+          0
+        )
       )
     ),
     R.toPairs,
-    R.map(([currency, sum]) => ({ currency, sum }))
+    R.map(([currency, sum]: [string, number]) => ({ currency, sum }))
   )
 
+  // @ts-ignore
   const currencies = R.pipe(sumAmountsByCurrency, R.map(R.prop('currency')))
 
+  // @ts-ignore
   const sums = R.pipe(sumAmountsByCurrency, R.map(R.prop('sum')))
 
   return (
@@ -26,9 +36,11 @@ function CommitmentByCurrencyBarChart({ commitments }) {
       <BarChart
         width={600}
         height={500}
+        // @ts-ignore
         series={[{ data: [...sums(commitments)] }]}
         xAxis={[
           {
+            // @ts-ignore
             data: [...currencies(commitments)],
             scaleType: 'band',
           },

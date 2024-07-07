@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import Select from 'react-select'
 import axios from 'axios'
@@ -12,12 +12,14 @@ import CommitmentByCurrencyBarChart from './charts/CommitmentByCurrencyBarChart'
 import Error from '../../common/Error'
 import Loading from '../../common/Loading'
 
+import { CommitmentList } from '../types/Types'
+
 function Commitments() {
   const { id } = useParams()
 
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-  const [commitments, setCommitments] = useState([])
+  const [commitments, setCommitments] = useState<CommitmentList>([])
   const [selectedOption, setSelectedOption] = useState(null)
 
   const { baseUrl, commitmentsEndpoint, assetClasses } = useContext(AppContext)
@@ -26,6 +28,7 @@ function Commitments() {
   useEffect(() => {
     if (selectedOption) {
       setLoading(true)
+      // @ts-ignore
       const assetClass = selectedOption.value
       const investorId = id
       const COMMITMENTS_API = `${commitmentApi}/${assetClass}/${investorId}`
@@ -46,6 +49,7 @@ function Commitments() {
     }
   }, [selectedOption])
 
+  // @ts-ignore
   const handleSelectChange = (option) => {
     setSelectedOption(option)
   }
@@ -69,7 +73,7 @@ function Commitments() {
         <Loading />
       ) : selectedOption ? (
         commitments ? (
-          commitments.length > 0 ? (
+          Object.keys(commitments).length > 0 ? (
             <div>
               <CommitmentDetails commitments={commitments} />
               <br />
