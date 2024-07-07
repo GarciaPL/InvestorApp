@@ -16,16 +16,20 @@ Run container
 
 ## Available Scripts
 
-### `npm start`
+### `npm start` / `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:80](http://localhost:80) to view it in your browser.
 
-### `npm test`
+### `npm test` / `yarn test`
 
 Launches the test runner in the interactive watch mode.
 
-### `npm run build`
+### `npm run format` / `yarn format`
+
+Run prettier formatter
+
+### `npm run build` / `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.

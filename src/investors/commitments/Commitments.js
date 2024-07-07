@@ -51,7 +51,7 @@ function Commitments() {
   }
 
   if (error) {
-    return <Error error={error} />
+    return <Error errorMessage={error} />
   }
 
   return (

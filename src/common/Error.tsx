@@ -1,4 +1,6 @@
-function Error({ error }) {
+import { ErrorInterface } from "./types/Types"
+
+const Error = ({ errorMessage }: ErrorInterface) => {
   return (
     <div
       style={{
@@ -9,7 +11,7 @@ function Error({ error }) {
       }}
     >
       <h1>Error during processing your request.</h1>
-      {error && <pre>{error.toString()}</pre>}
+      {errorMessage && <pre>{errorMessage.toString()}</pre>}
     </div>
   )
 }

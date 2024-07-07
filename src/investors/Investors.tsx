@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 
 import AppContext from '../context/AppContext'
@@ -7,10 +7,12 @@ import InvestorDetails from './InvestorDetails'
 import Loading from '../common/Loading'
 import Error from '../common/Error'
 
+import { InvestorsInterface } from './types/Types'
+
 function Investors() {
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [investors, setInvestors] = useState([])
+  const [error, setError] = useState<string | null>(null)
+  const [investors, setInvestors] = useState<InvestorsInterface | []>([])
 
   const { baseUrl, investorsEndpoint } = useContext(AppContext)
   const investorsApi = `${baseUrl}${investorsEndpoint}`
@@ -33,7 +35,7 @@ function Investors() {
   }, [])
 
   if (error) {
-    return <Error error={error} />
+    return <Error errorMessage={error} />
   }
 
   return (
@@ -41,7 +43,7 @@ function Investors() {
       {loading ? (
         <Loading />
       ) : investors ? (
-        investors.length > 0 ? (
+        Object.keys(investors).length ? (
           <InvestorDetails investors={investors} />
         ) : (
           <div>No investors found!</div>
